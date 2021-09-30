@@ -9,7 +9,7 @@ export default {
 
         let observer = new Observer(connection, options);
 
-        Vue.prototype.$mqtt = observer.Mqtt;
+        Vue.config.globalProperties.$mqtt = observer.Mqtt;
 
         Vue.mixin({
             created() {

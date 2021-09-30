@@ -9,22 +9,12 @@ module.exports = {
         libraryTarget: 'umd'
     },
     devtool: "source-map",
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
-    ],
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015']
-                }
+                loader: 'babel-loader'
             }
         ]
     }
